@@ -112,7 +112,7 @@ class RegisterViewController: UIViewController {
 
 // 정규표현식
 extension String {
-    // 대문자, 소문자, 특수문자, 숫자 8자 이상일 때, -> True
+    // 대문자, 소문자, 특수문자, 숫자 8자 이상일 때 -> True
     func isValidPassword() -> Bool {
         let regularExpression = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{8,}"
         let passwordValidation = NSPredicate.init(format: "SELF MATCHES %@", regularExpression)
