@@ -9,13 +9,33 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     // MARK: - Properties
-    var isValidEmail = false
+    // 유효성 검사를 위한 프로퍼티
+    var isValidEmail = false {
+        didSet { // 프로퍼티 옵저버
+            self.validateUserInfo()
+        }
+    }
     
-    var isValidName = false
+    var isValidName = false {
+        didSet { // 프로퍼티 옵저버
+            self.validateUserInfo()
+        }
+    }
     
-    var isValidNickname = false
+    var isValidNickname = false {
+        didSet { // 프로퍼티 옵저버
+            self.validateUserInfo()
+        }
+    }
     
-    var isValidPassword = false
+    var isValidPassword = false {
+        didSet { // 프로퍼티 옵저버
+            self.validateUserInfo()
+        }
+    }
+    
+    @IBOutlet weak var signupButton: UIButton!
+    
     
     // TextFields
     @IBOutlet weak var emailTextField: UITextField!
@@ -43,13 +63,21 @@ class RegisterViewController: UIViewController {
         
         switch sender {
         case emailTextField:
-            print("email")
+            //print("email")
+            self.isValidEmail = text.isValidEmail()
+            
         case nameTextField:
-            print("name")
+            //print("name")
+            self.isValidName = text.count > 2
+            
         case nicknameTextField:
-            print("nickname")
+            //print("nickname")
+            self.isValidNickname = text.count > 2
+            
         case passwordTextField:
-            print("password")
+            //print("password")
+            self.isValidPassword = text.isValidPassword()
+            
         default:
             fatalError("Missing TextField...")
         }
@@ -64,11 +92,27 @@ class RegisterViewController: UIViewController {
                          for: .editingChanged)
         }
     }
+    
+    // 사용자가 입력한 회원정보를 확인하고 -> UI 업데이트
+    private func validateUserInfo() {
+        if isValidEmail && isValidName && isValidNickname && isValidPassword {
+            self.signupButton.isEnabled = true
+            UIView.animate(withDuration: 0.33) {
+                self.signupButton.backgroundColor = UIColor(named: "facebookColor")
+            }
+        } else {
+            self.signupButton.isEnabled = true
+            UIView.animate(withDuration: 0.33) {
+                self.signupButton.backgroundColor = UIColor(named: "disabledButtonColor")
+            }
+        }
+    }
+ 
 }
 
 // 정규표현식
 extension String {
-    // 대문자, 소문자, 특수문자, 숫자 8자 이상일 떄, -> True
+    // 대문자, 소문자, 특수문자, 숫자 8자 이상일 때, -> True
     func isValidPassword() -> Bool {
         let regularExpression = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{8,}"
         let passwordValidation = NSPredicate.init(format: "SELF MATCHES %@", regularExpression)
