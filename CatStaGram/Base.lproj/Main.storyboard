@@ -146,10 +146,88 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vgz-ox-Wi3"/>
+                    <connections>
+                        <outlet property="loginButton" destination="RMw-Rf-3ws" id="PQj-BO-Z1U"/>
+                        <outlet property="registerButton" destination="bZd-zb-SZB" id="KX8-WZ-yGa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="496" y="80"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="pHW-On-f9t">
+            <objects>
+                <viewController id="abW-RP-0ot" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u1J-uq-a3j">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWO-03-dgf">
+                                <rect key="frame" x="157" y="407" width="76" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NpV-Et-6lD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CWO-03-dgf" firstAttribute="centerX" secondItem="u1J-uq-a3j" secondAttribute="centerX" id="YBf-Jf-tdy"/>
+                            <constraint firstItem="CWO-03-dgf" firstAttribute="centerY" secondItem="u1J-uq-a3j" secondAttribute="centerY" id="vkW-h2-TmS"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="GX2-fw-Hj2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0mn-8J-gdd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1260" y="1442"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="xz7-0M-ynN">
+            <objects>
+                <viewController id="KEl-3g-k4O" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xIW-Be-3at">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFc-E2-nAe">
+                                <rect key="frame" x="160.33333333333334" y="407" width="69.333333333333343" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="S7o-Ux-Dq0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pFc-E2-nAe" firstAttribute="centerX" secondItem="xIW-Be-3at" secondAttribute="centerX" id="ebq-qm-S4p"/>
+                            <constraint firstItem="pFc-E2-nAe" firstAttribute="centerY" secondItem="xIW-Be-3at" secondAttribute="centerY" id="wuW-iN-UlE"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" id="Cso-V3-zdZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QXi-lq-1Xf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-249" y="1462"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jDH-OJ-xi7">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarVC" id="Etr-cL-Ohp" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vY7-mW-FVA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="KEl-3g-k4O" kind="relationship" relationship="viewControllers" id="t4u-pr-ZHf"/>
+                        <segue destination="abW-RP-0ot" kind="relationship" relationship="viewControllers" id="Zv5-rj-TC0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="quZ-vq-ivz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="495" y="793"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="6cD-vM-1yy">
@@ -245,6 +323,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerButtonDidTap:" destination="a2E-la-lMZ" eventType="touchUpInside" id="nR6-ak-SYP"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2CK-nt-n9Y">
                                 <rect key="frame" x="10" y="758.66666666666663" width="370" height="1"/>
@@ -296,12 +377,21 @@
                             <constraint firstItem="niV-aa-icw" firstAttribute="leading" secondItem="VAu-tY-8kT" secondAttribute="leading" constant="10" id="xXY-AB-ifR"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ggl-GU-hXu">
+                        <barButtonItem key="leftBarButtonItem" image="arrow.backward" catalog="system" id="9bC-8m-CRd">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="backButtonDidTap:" destination="a2E-la-lMZ" id="das-Mu-XmB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="emailTextField" destination="r5y-Vn-H4E" id="4Gp-xU-QnC"/>
                         <outlet property="nameTextField" destination="Us2-Hg-Xdc" id="Fhm-c1-lAA"/>
                         <outlet property="nicknameTextField" destination="ugv-qX-zsv" id="xVs-i0-C5C"/>
                         <outlet property="passwordTextField" destination="VV5-ct-ULF" id="4ju-bP-wr9"/>
+                        <outlet property="popToLoginButton" destination="yXB-qP-8Oa" id="S64-iI-F5J"/>
                         <outlet property="signupButton" destination="eGg-gX-NnB" id="9fy-kI-sfl"/>
                     </connections>
                 </viewController>
@@ -329,6 +419,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="f.square.fill" catalog="system" width="128" height="114"/>
         <image name="ic_catstagram_logo" width="476" height="96"/>
         <namedColor name="AccentColor">
