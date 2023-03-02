@@ -17,6 +17,9 @@
 		B27153B828B63A5A00E30BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27153B728B63A5A00E30BE4 /* Assets.xcassets */; };
 		B27153BB28B63A5A00E30BE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27153B928B63A5A00E30BE4 /* LaunchScreen.storyboard */; };
 		B27D4C2928C0978D00CADEBD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27D4C2828C0978D00CADEBD /* LoginViewController.swift */; };
+		B288C54A29B0F6D9004FAAB6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B288C54929B0F6D9004FAAB6 /* HomeViewController.swift */; };
+		B288C54E29B0FA1A004FAAB6 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B288C54C29B0FA1A004FAAB6 /* FeedTableViewCell.swift */; };
+		B288C54F29B0FA1A004FAAB6 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B288C54D29B0FA1A004FAAB6 /* FeedTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		B27153BA28B63A5A00E30BE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B27153BC28B63A5A00E30BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B27D4C2828C0978D00CADEBD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B288C54929B0F6D9004FAAB6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B288C54C29B0FA1A004FAAB6 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		B288C54D29B0FA1A004FAAB6 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		B27153AD28B63A5900E30BE4 /* CatStaGram */ = {
 			isa = PBXGroup;
 			children = (
+				B288C54829B0F6CC004FAAB6 /* Home */,
 				B27153AE28B63A5900E30BE4 /* AppDelegate.swift */,
 				B27153B028B63A5900E30BE4 /* SceneDelegate.swift */,
 				B27153B428B63A5900E30BE4 /* Main.storyboard */,
@@ -77,6 +84,24 @@
 				B27153BC28B63A5A00E30BE4 /* Info.plist */,
 			);
 			path = CatStaGram;
+			sourceTree = "<group>";
+		};
+		B288C54829B0F6CC004FAAB6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B288C54B29B0F9F5004FAAB6 /* Cell */,
+				B288C54929B0F6D9004FAAB6 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B288C54B29B0F9F5004FAAB6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B288C54C29B0FA1A004FAAB6 /* FeedTableViewCell.swift */,
+				B288C54D29B0FA1A004FAAB6 /* FeedTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B27153BB28B63A5A00E30BE4 /* LaunchScreen.storyboard in Resources */,
+				B288C54F29B0FA1A004FAAB6 /* FeedTableViewCell.xib in Resources */,
 				B27153B828B63A5A00E30BE4 /* Assets.xcassets in Resources */,
 				B27153B628B63A5900E30BE4 /* Main.storyboard in Resources */,
 			);
@@ -153,9 +179,11 @@
 				B206B3A1295C4BD700D733AC /* UIViewController+Extension.swift in Sources */,
 				B206B39F295C455100D733AC /* UIView+Extenstion.swift in Sources */,
 				B27D4C2928C0978D00CADEBD /* LoginViewController.swift in Sources */,
+				B288C54A29B0F6D9004FAAB6 /* HomeViewController.swift in Sources */,
 				B27153AF28B63A5900E30BE4 /* AppDelegate.swift in Sources */,
 				B27153B128B63A5900E30BE4 /* SceneDelegate.swift in Sources */,
 				B206B3A329AF184A00D733AC /* UserInfo.swift in Sources */,
+				B288C54E29B0FA1A004FAAB6 /* FeedTableViewCell.swift in Sources */,
 				B206B39D2959A21700D733AC /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
