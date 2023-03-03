@@ -10,11 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="544" id="KGk-i7-Jjw" customClass="FeedTableViewCell" customModule="CatStaGram" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="544"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedTableViewCell" rowHeight="495" id="KGk-i7-Jjw" customClass="FeedTableViewCell" customModule="CatStaGram" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="495"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="544"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="495"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Phr-Y0-XpG">
@@ -64,6 +64,9 @@
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="ic_home_heart"/>
                         <state key="selected" image="ic_home_heart_full"/>
+                        <connections>
+                            <action selector="actionIsHeart:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Gla-Pt-sG0"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYe-cb-YOZ">
                         <rect key="frame" x="40" y="373.5" width="20" height="20"/>
@@ -92,40 +95,83 @@
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="ic_bookmark_white"/>
                         <state key="selected" image="ic_bookmark_black"/>
+                        <connections>
+                            <action selector="actionBookMark:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wHz-79-x3D"/>
+                        </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9x-nQ-zfQ">
-                        <rect key="frame" x="16" y="400" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아요 4개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9x-nQ-zfQ">
+                        <rect key="frame" x="10" y="403.5" width="53" height="14.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023년 새해 복 많이 받으세요!! :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kY9-fU-J5d">
+                        <rect key="frame" x="10" y="428" width="300" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="enQ-EO-VUh">
+                        <rect key="frame" x="10" y="454.5" width="25" height="22"/>
+                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="BeW-jY-KqI"/>
+                            <constraint firstAttribute="height" constant="25" id="N0g-cc-MGR"/>
+                        </constraints>
+                    </imageView>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="댓글 달기..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e8r-AC-hO6">
+                        <rect key="frame" x="42" y="448.5" width="268" height="34"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="bNK-nd-1l4" firstAttribute="centerY" secondItem="gYe-cb-YOZ" secondAttribute="centerY" id="0We-jN-GiQ"/>
+                    <constraint firstItem="kY9-fU-J5d" firstAttribute="trailing" secondItem="AaN-BX-1eY" secondAttribute="trailing" id="0ug-Cb-auy"/>
+                    <constraint firstItem="enQ-EO-VUh" firstAttribute="leading" secondItem="Phr-Y0-XpG" secondAttribute="leading" id="24b-y4-OwB"/>
                     <constraint firstItem="AaN-BX-1eY" firstAttribute="top" secondItem="opN-HR-r5U" secondAttribute="bottom" constant="10" id="2c1-w4-zXT"/>
+                    <constraint firstItem="kY9-fU-J5d" firstAttribute="top" secondItem="G9x-nQ-zfQ" secondAttribute="bottom" constant="10" id="8mZ-A6-vdI"/>
                     <constraint firstItem="bMz-bX-nes" firstAttribute="leading" secondItem="Phr-Y0-XpG" secondAttribute="leading" id="9ql-CU-Zz4"/>
                     <constraint firstItem="opN-HR-r5U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ezc-J2-qaS"/>
                     <constraint firstAttribute="trailing" secondItem="AaN-BX-1eY" secondAttribute="trailing" constant="10" id="Fxy-Ut-xya"/>
                     <constraint firstItem="ZbJ-na-JWf" firstAttribute="leading" secondItem="Phr-Y0-XpG" secondAttribute="trailing" constant="10" id="HTo-uo-jfK"/>
                     <constraint firstItem="Phr-Y0-XpG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="IpN-7d-aPd"/>
+                    <constraint firstItem="e8r-AC-hO6" firstAttribute="centerY" secondItem="enQ-EO-VUh" secondAttribute="centerY" id="MEB-Uj-6aE"/>
+                    <constraint firstItem="G9x-nQ-zfQ" firstAttribute="leading" secondItem="bMz-bX-nes" secondAttribute="leading" id="Mti-IU-IBO"/>
                     <constraint firstItem="N4m-s5-pPn" firstAttribute="top" secondItem="opN-HR-r5U" secondAttribute="bottom" constant="10" id="NIY-sg-olA"/>
                     <constraint firstItem="ZbJ-na-JWf" firstAttribute="centerY" secondItem="Phr-Y0-XpG" secondAttribute="centerY" id="On7-r1-lf7"/>
                     <constraint firstItem="bMz-bX-nes" firstAttribute="top" secondItem="opN-HR-r5U" secondAttribute="bottom" constant="10" id="Oqh-IF-FNR"/>
                     <constraint firstItem="ger-Qm-01l" firstAttribute="centerY" secondItem="Phr-Y0-XpG" secondAttribute="centerY" id="Tpv-tp-yo0"/>
+                    <constraint firstItem="e8r-AC-hO6" firstAttribute="trailing" secondItem="AaN-BX-1eY" secondAttribute="trailing" id="UXG-yn-mZG"/>
                     <constraint firstItem="N4m-s5-pPn" firstAttribute="leading" secondItem="Phr-Y0-XpG" secondAttribute="leading" id="Ugv-qx-veM"/>
+                    <constraint firstItem="e8r-AC-hO6" firstAttribute="leading" secondItem="enQ-EO-VUh" secondAttribute="trailing" constant="7" id="VCl-p5-pKg"/>
                     <constraint firstItem="Phr-Y0-XpG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="XJS-0r-09r"/>
                     <constraint firstAttribute="trailing" secondItem="opN-HR-r5U" secondAttribute="trailing" id="Y7V-mD-3kQ"/>
                     <constraint firstItem="opN-HR-r5U" firstAttribute="top" secondItem="Phr-Y0-XpG" secondAttribute="bottom" constant="10" id="Yyz-00-Urg"/>
+                    <constraint firstItem="kY9-fU-J5d" firstAttribute="leading" secondItem="G9x-nQ-zfQ" secondAttribute="leading" id="bW4-mo-Bp6"/>
                     <constraint firstItem="gYe-cb-YOZ" firstAttribute="centerY" secondItem="bMz-bX-nes" secondAttribute="centerY" id="dwE-9G-8t7"/>
                     <constraint firstAttribute="trailing" secondItem="ger-Qm-01l" secondAttribute="trailing" constant="10" id="jUJ-b6-G5n"/>
+                    <constraint firstItem="e8r-AC-hO6" firstAttribute="height" secondItem="enQ-EO-VUh" secondAttribute="height" multiplier="1.36" id="rTP-Sb-8g3"/>
+                    <constraint firstItem="enQ-EO-VUh" firstAttribute="top" secondItem="kY9-fU-J5d" secondAttribute="bottom" constant="13" id="sbT-Uw-Q82"/>
                     <constraint firstItem="AaN-BX-1eY" firstAttribute="centerY" secondItem="bNK-nd-1l4" secondAttribute="centerY" id="uZS-B3-lII"/>
+                    <constraint firstItem="G9x-nQ-zfQ" firstAttribute="top" secondItem="gYe-cb-YOZ" secondAttribute="bottom" constant="10" id="w8O-DO-uWf"/>
                     <constraint firstItem="bNK-nd-1l4" firstAttribute="leading" secondItem="gYe-cb-YOZ" secondAttribute="trailing" constant="13" id="xYc-JX-Boc"/>
                     <constraint firstItem="gYe-cb-YOZ" firstAttribute="leading" secondItem="N4m-s5-pPn" secondAttribute="trailing" constant="13" id="xbv-eF-31I"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="131.8840579710145" y="251.11607142857142"/>
+            <connections>
+                <outlet property="buttonIsBookMark" destination="AaN-BX-1eY" id="ckB-u2-tDr"/>
+                <outlet property="buttonIsHeart" destination="bMz-bX-nes" id="1K6-jY-Gah"/>
+                <outlet property="imageViewFeed" destination="opN-HR-r5U" id="cAx-Tm-GwS"/>
+                <outlet property="imageViewMyProfile" destination="enQ-EO-VUh" id="DtL-t2-aBt"/>
+                <outlet property="imageViewUserProfile" destination="Phr-Y0-XpG" id="gnD-IS-nHo"/>
+                <outlet property="labelFeed" destination="kY9-fU-J5d" id="plP-HT-6vE"/>
+                <outlet property="labelHowManyLike" destination="G9x-nQ-zfQ" id="eRn-zg-mQb"/>
+                <outlet property="labelUserName" destination="ZbJ-na-JWf" id="7rb-Ca-MOs"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="234.70982142857142"/>
         </tableViewCell>
     </objects>
     <resources>
